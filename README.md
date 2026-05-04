@@ -1,50 +1,165 @@
-# Welcome to your Expo app 👋
+# 🏘️ App Gestión de Ciudadela
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Sistema móvil profesional para control y gestión de ciudadelas/condominios. Permite monitorear visitantes, alertas de seguridad, mantenimiento y documentación de incidentes.
 
-## Get started
+## ✨ Características Principales
 
-1. Install dependencies
+### 📊 **Dashboard**
+- Estadísticas en tiempo real (Visitantes, Alertas, Residentes, Eventos)
+- Banner de alertas pendientes
+- Timeline de actividad reciente
+- Acciones rápidas (Reportar, Emergencia, Mensaje, Configurar)
 
-   ```bash
-   npm install
-   ```
+### 🚨 **Alertas**
+- Sistema de alertas categorizado (Seguridad, Mantenimiento, Avisos, Info)
+- Filtros por tipo
+- Indicadores de severidad (Crítica, Alta, Media, Baja)
+- Marcar alertas como leídas
+- Contador de notificaciones nuevas
 
-2. Start the app
+### 📁 **Gestión de Documentos**
+- Captura de fotos con cámara del dispositivo
+- Selección de imágenes desde galería
+- Categorización de documentos:
+  - 🔴 **Incidentes** - Reportes de problemas/seguridad
+  - 🔵 **Visitantes** - Registro de huéspedes
+  - 🟠 **Mantenimiento** - Documentación de trabajos
+- Estadísticas de documentos registrados
+- Eliminación individual o masiva
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ **Tech Stack**
 
-In the output, you'll find options to open the app in a
+- **Framework**: Expo + React Native + TypeScript
+- **Routing**: Expo Router (Tab-based navigation)
+- **UI Components**: React Native StyleSheet + Custom Components
+- **Icons**: @expo/vector-icons (SF Symbols)
+- **Image Picker**: expo-image-picker v17.0.11
+- **Dark Mode**: Soporte automático light/dark
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🎨 **Paleta de Colores**
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+Primario Turquesa:    #4ECDC4
+Alerta Rojo:          #FF6B6B
+Advertencia Naranja:  #FFB84D
+Secundario Verde:     #95E1D3
+Acento Rosa:          #F38181
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 📱 **Pantallas**
 
-## Learn more
+| Pantalla | Descripción | Estado |
+|----------|-------------|--------|
+| Dashboard | Overview del sistema | ✅ Completado |
+| Alertas | Gestión de notificaciones | ✅ Completado |
+| Gestión | Captura y organización de documentos | ✅ Completado |
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🚀 **Instalación y Setup**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Requisitos
+- Node.js 18+
+- npm o yarn
+- Expo CLI
 
-## Join the community
+### Pasos
 
-Join our community of developers creating universal apps.
+1. **Clonar repositorio**
+```bash
+git clone https://github.com/OscarMeza24/AppGestionCiudadela.git
+cd AppGestionCiudadela
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+2. **Instalar dependencias**
+```bash
+npm install
+```
+
+3. **Iniciar servidor de desarrollo**
+```bash
+npx expo start
+```
+
+4. **Ejecutar en dispositivo**
+   - Presiona `a` para Android
+   - Presiona `i` para iOS
+   - Presiona `w` para Web
+   - Escanea QR con Expo Go app
+
+## 📋 **Próximas Funcionalidades (Roadmap)**
+
+- [ ] Contexto global para compartir estado entre pantallas
+- [ ] Persistencia de datos con AsyncStorage
+- [ ] Modal de visualización de documentos
+- [ ] Búsqueda y filtros avanzados
+- [ ] Notificaciones push
+- [ ] API Backend integration
+- [ ] Exportación de reportes PDF
+- [ ] Autenticación de usuarios
+- [ ] Sincronización en la nube
+- [ ] Modo offline
+
+## 🏗️ **Estructura del Proyecto**
+
+```
+app/
+├── (tabs)/
+│   ├── _layout.tsx         # Configuración de navegación
+│   ├── index.tsx           # Dashboard
+│   ├── explore.tsx         # Alertas
+│   └── gestion.tsx         # Gestión de documentos
+├── _layout.tsx             # Layout raíz
+└── modal.tsx               # Modal global
+components/
+├── themed-text.tsx         # Componente texto con tema
+├── themed-view.tsx         # Componente vista con tema
+└── ui/
+    └── icon-symbol.tsx     # Sistema de iconos
+constants/
+└── theme.ts                # Constantes de color y tema
+hooks/
+├── use-color-scheme.ts     # Hook para detectar tema
+└── use-theme-color.ts      # Hook para colores de tema
+```
+
+## 🔧 **Dependencias Clave**
+
+```json
+{
+  "expo": "^54.0.33",
+  "react": "^19.1.0",
+  "react-native": "^0.76.3",
+  "expo-router": "^3.5.16",
+  "expo-image-picker": "^17.0.11",
+  "@expo/vector-icons": "^14.0.2"
+}
+```
+
+## 📝 **Notas de Desarrollo**
+
+### Iconos válidos
+- El sistema usa SF Symbols 7.0 (iOS)
+- Iconos válidos: `person.fill`, `exclamationmark.triangle.fill`, `house.fill`, etc.
+- Evitar: `gear.fill` → usar `gearshape.fill`, `archive.fill` → usar `archivebox.fill`
+
+### Estilos y Responsive
+- Grid items: `width: '48%'` para layouts de 2 columnas
+- ScrollView anidados: usar `scrollEventThrottle={16}` para mejor rendimiento
+- Padding consistente: `paddingHorizontal: 16`
+
+### Permisos
+El app requiere:
+- `CAMERA` - Para captura de fotos
+- `MEDIA_LIBRARY` - Para acceso a galería
+
+## 📧 **Contacto**
+
+**Desarrollador**: Oscar Meza  
+**Repositorio**: https://github.com/OscarMeza24/AppGestionCiudadela
+
+## 📄 **Licencia**
+
+Este proyecto está bajo licencia MIT.
+
+---
+
+**Última actualización**: 4 de mayo de 2026
