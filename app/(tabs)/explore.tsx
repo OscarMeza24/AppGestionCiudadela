@@ -29,33 +29,6 @@ export default function AlertsScreen() {
       severity: 'critical',
       read: false,
     },
-    {
-      id: '2',
-      type: 'maintenance',
-      title: 'Mantenimiento en ascensor 3',
-      description: 'Programado para el 10 de mayo - 10:00 AM',
-      time: 'Hace 2 horas',
-      severity: 'medium',
-      read: false,
-    },
-    {
-      id: '3',
-      type: 'warning',
-      title: 'Aviso de corte de agua',
-      description: 'Suspensión de servicio por 4 horas - Sector A y B',
-      time: 'Hace 4 horas',
-      severity: 'high',
-      read: true,
-    },
-    {
-      id: '4',
-      type: 'info',
-      title: 'Reunión junta directiva',
-      description: 'Próxima reunión el 15 de mayo a las 7:00 PM',
-      time: 'Ayer',
-      severity: 'low',
-      read: true,
-    },
   ]);
 
   const getTypeColor = (type: Alert['type']) => {
